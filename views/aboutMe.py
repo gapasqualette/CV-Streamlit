@@ -1,15 +1,5 @@
 import streamlit as st
-import webbrowser as wbb
-import pyperclip as ppc
-import streamlit.components.v1 as cmp
 
-import time
-from forms.contact import contact_form
-
-@st.dialog("Contact Me: ")
-def show_contact():
-    contact_form()
-    
 # Criação de duas colunas (Foto de Perfil & Infos Básicas)
 
 col1, col2 = st.columns(2, gap="large", vertical_alignment="center")
@@ -24,22 +14,18 @@ with col1:
         """
     )
     
-    col3, col4 = st.columns(2, gap="medium", vertical_alignment="center")
-    with col3:
-        lnk_btn = st.button("LinkedIn",icon=":material/token:")
-        if lnk_btn:
-            wbb.open("https://www.linkedin.com/in/galencastro-pasqualette/")
+    cols = st.columns(3)
+    with cols[0]:
+        st.link_button('LinkedIn', "https://www.linkedin.com/in/galencastro-pasqualette/")
     
-    with col4:
-        wpp_btn = st.button("WhatsApp", icon=":material/smartphone:")
-        if wpp_btn:
-            ppc.copy("21992696959")
-            warningInfo = st.toast("Número de telefone copiado com sucesso!", icon=":material/phone:")
-
+    with cols[1]:
+        st.link_button('Whatsapp', url='https://wa.me/5521992696959')
+    
+    with cols[2]:
+        st.link_button("Instagram", url='https://www.instagram.com/g.pasqualette/', icon=":material/camera:")
+    
 with col2:
     st.image("assets/FotoCasamento.jpeg", width=200)
-    if st.button("📱 Contate-me"):
-        show_contact()
 
 # Experiencias
 
@@ -75,14 +61,14 @@ perguntas = {
             "Níveis de idiomas": "- C1 em Inglês (Link Abaixo) e Espanhol Intermediário"
     }
 
-box = st.selectbox("Curiosidades", list(perguntas.keys()))
-
+box = st.selectbox("Curiosidades", list(perguntas.keys()), placeholder="Escolha uma opção")
+    
 if box == "Níveis de idiomas":
     img_pop = st.checkbox("Mostrar Certificado de Inglês")
     if img_pop:
-        st.image("assets/EnglishCertificate.jpg")
+        st.image("assets/EnglishCertificate.jpg", width=800)
 
-else: 
+elif box != "": 
     st.write(perguntas[box]) 
        
         
