@@ -4,10 +4,7 @@ st.set_page_config(layout="wide")
 
 pages = {
     'MY INFO': [st.Page(page = "views/aboutMe2.py", title = "About me", icon = ":material/info:", default=True)
-                ],
-    'STREAMLIT PROJECTS': [st.Page(page = 'views/dashboard_housing.py', title = 'USA Housing Dashboard', icon='📊'),
-        ]
-         
+                ]     
          }
 
 pg = st.navigation(pages)  

@@ -1,13 +1,11 @@
 import streamlit as st
-import base64
-from streamlit_pdf_viewer import pdf_viewer
 
 st.header("📄 My CV | Portfolio ", divider=True)
 path = 'assets/Currículo_Guilherme_AnaliseDeDados.pdf'
 
 projects_links = {
     "Olympic Athletes Analysis": 'https://github.com/gapasqualette/Athletes-Events-Data-Analysis',
-    "Housing Dashboard": 'https://github.com/gapasqualette/Housing_Dashboard',
+    "Housing Dashboard": 'https://housingdashboard-gapasqualette.streamlit.app',
     "Credit Card Transactions": "https://github.com/gapasqualette/credit-card-transactions"
 }
 
