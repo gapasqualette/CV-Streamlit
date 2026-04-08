@@ -23,7 +23,7 @@ path = 'assets/Currículo_Guilherme_AnaliseDeDados.pdf'
 projects_links = {
     "Olympic Athletes Analysis": 'https://github.com/gapasqualette/Athletes-Events-Data-Analysis',
     "Housing Dashboard": 'https://housingdashboard-gapasqualette.streamlit.app',
-    "Credit Card Transactions": "https://github.com/gapasqualette/credit-card-transactions"
+    "Credit Card Transactions": "https://credit-card-transactions-analysis-gapasqualette.streamlit.app"
 }
 
 NUM_PROJECTS = len(projects_links)
